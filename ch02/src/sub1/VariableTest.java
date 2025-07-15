@@ -14,7 +14,7 @@ public class VariableTest {
 		int a = 3;
 		int b = 7;		
 				
-		System.out.println("a : " + a);
+		System.out.println("a : " + a); // 문자열 + 값
 		System.out.println("b : " + b);
 		
 		// 재할당

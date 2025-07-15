@@ -52,7 +52,7 @@ public class DataTypeTest {
 		String s1 = "A";						// 첫 시작 대문자
 		String s2 = "가";
 		String s3 = "Apple";
-		String s4 = "가울";
+		String s4 = "가을";
 		
 		System.out.println("s1 : " + s1);
 		System.out.println("s2 : " + s2);
