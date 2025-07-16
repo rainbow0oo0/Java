@@ -10,6 +10,10 @@ package sub6;
  * - 객체 생성할때 타입선언을 부모클래스 타입으로 선언(업캐스팅)
  * - 다형성을 통해서 프로그래밍 중복코드 줄이고 유연성 향상
  * 
+ * 날짜 : 2025/07/16
+ * 이름 : 이준우
+ * 내용 : Pet(Cat, Dog) 상속 연습
+ * 
  */
 
 public class PolyTest {
@@ -54,6 +58,17 @@ public class PolyTest {
 		arr[1].move();
 		arr[2].move();
 		
+		//////////////////////////////////////////////////
+		
+		Dog dog = new Dog();
+		Cat cat = new Cat();	
+		
+		printSound(dog);
+		printSound(cat);
+				
+	}	
+	public static void printSound( Pet pet ) {
+		pet.makeSound();		
 		
 	}
 }
