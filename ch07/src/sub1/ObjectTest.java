@@ -36,6 +36,5 @@ public class ObjectTest {
 		System.out.println("a1 해시값 : " + a1.hashCode());
 		System.out.println("a2 해시값 : " + a2.hashCode());
 		
-		// 이제 어느정도 손은 따라가는데 뭔말임? ㄹㅇㅋㅋ
 	}
 }
