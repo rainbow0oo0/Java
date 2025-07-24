@@ -33,7 +33,7 @@ public class PropertiesTest {
 			fos.close();
 				
 		}catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrance();
 		}
 	System.out.println("프로그램 종료...");
 		

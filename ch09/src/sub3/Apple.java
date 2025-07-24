@@ -17,11 +17,11 @@ public class Apple implements Serializable{ // 직렬화를 위해 Serializable 
 		@Override
 		public String toString() {
 			return "Apple [country=" + country + ", price=" + price + "]";
-		}
 			
 		public void show() {
 			System.out.println("원산지 : " + country);
-			System.out.println("가격 : " + price);		
+			System.out.println("가격 : " + price);
+		}
 	}
 }
 

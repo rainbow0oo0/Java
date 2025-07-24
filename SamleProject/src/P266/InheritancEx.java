@@ -21,7 +21,7 @@ class Person{
 	}	
 }
 
-class Stundent extends Person{
+class Student extends Person{
 	public void set() {
 	age = 30;
 	name = "홍길동";
