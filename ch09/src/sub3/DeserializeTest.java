@@ -30,10 +30,9 @@ public class DeserializeTest {
 			fis.close();
 			
 		}catch (Exception e) {
-			e.printStackTrace("프로그램 종료...");		
-			
+			e.printStackTrace();			
 		}
 		
-		
+		System.out.println("프로그램 종료...");
 	}
 }

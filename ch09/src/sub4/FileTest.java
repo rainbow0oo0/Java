@@ -1,8 +1,11 @@
 package sub4;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 /*
  *  날짜 : 2025/07/23
@@ -13,8 +16,7 @@ import java.nio.file.Paths;
 
 public class FileTest {
 	
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		
 		String path1 = "C:\\Users\\GGG\\Desktop\\source.txt";
 		String path2 = "C:\\Users\\GGG\\Desktop\\Sample";
@@ -34,27 +36,26 @@ public class FileTest {
 			System.out.println("file2 디렉터리 여부 : " + file2.isDirectory());
 			System.out.println("file1 이름 " + file1.getName());
 			System.out.println("file2 이름 " + file2.getName());
-			System.out.println("file1 경로 " + file1.getName());
-			System.out.println("file2 경로 " + file2.getName());
-			System.out.println("file1 검토 " + file1.getpath());
-			System.out.println("file2 검토 " + file2.getpath());
+			System.out.println("file1 상대 경로 " + file1.getPath());
+			System.out.println("file2 상대 경로 " + file2.getPath());
 			System.out.println("file1 시스템 경로 " + file1.getAbsolutePath());
 			System.out.println("file2 시스템 경로 " + file2.getAbsolutePath());
 			
-			file1.delete(); // 파일 삭제
-			file2.delete(); // 파일 삭제
+			// file1.delete(); // 파일 삭제
+			// file2.delete(); // 파일 삭제
 			
 			// File 실습
-			Path source = Paths.get(C:\\Users\\GGG\\Decktop\\source.txt);
-			Path target = Paths.get(C:\\Users\\GGG\\Decktop\\source.txt);
+			Path source = Paths.get("C:\\Users\\GGG\\Decktop\\source.txt");
+			Path target = Paths.get("C:\\Users\\GGG\\Decktop\\tarhet.txt");
+			Path dest = Paths.get("C:\\Users\\GGG\\Desktop\\dest.txt");
 			
 			// 파일 복사
 			Files.copy(source, target);
 			
 			//파일 이동
-			Files.move(source, dest, null)
+			Files.move(source, dest, StandardCopyOption.REPLACE_EXISTING);
 			
-		} catech (IOException a) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println("프로그램 종료...");
