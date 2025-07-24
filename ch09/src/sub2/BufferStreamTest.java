@@ -19,7 +19,9 @@ import java.io.IOException;
 
 public class BufferStreamTest {
 	
-	String source = "C:\\Users\\GGG\\Desktop\\Persom.tif";
+	public static void main(String[] args) {	
+	
+	String source = "C:\\Users\\GGG\\Desktop\\Person.tif";
 	String target = "C:\\Users\\GGG\\Desktop\\Person2.tif";
 			
 	try {
@@ -32,21 +34,18 @@ public class BufferStreamTest {
 		BufferedOutputStream bos = new BufferedOutputStream(fos);
 		
 		// 무한 반복으로 스트림 작업 수행
-		while(true) {
-			
+		while(true) {			
 			// 파일 읽기
-			int data = bis.read();				
-			
+			int data = bis.read();			
 			if(data == -1 ) {
 				// 파일 내용이 없으면
 					break;				
-			}
-				
+				}				
 				// 파일 쓰기
-				bos.write(data);
-								
+				bos.write(data);								
 			}
 			
+			// 스트림 작업 종료
 			bis.close();
 			bos.close();
 		
