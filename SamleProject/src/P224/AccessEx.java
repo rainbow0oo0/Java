@@ -10,15 +10,28 @@ package P224;
 class Sample {
 	public int a;
 	private int b;
-	int c; 
+	int c; // default
+	protected int d;
+}
+
+class Sub extends Sample {
+	
+	public void method() {
+		d = 10;
+	}
+	
 }
 
 public class AccessEx {
+	
 	public static void main(String[] args) {
+		
 		Sample sample = new Sample();
+		
 		sample.a = 10;
-		sample.b = 10;
+		// sample.b = 10;
 		sample.c = 10;		
 		
+		System.out.println(sample.a + sample.c);
 	}	
 } // 작동 오류가 맞음 타자에 적응하고 이후에 작동이 되도록 수정 예정

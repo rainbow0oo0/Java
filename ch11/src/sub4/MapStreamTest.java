@@ -2,6 +2,7 @@ package sub4;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
  * 날짜 : 2025/07/24
@@ -12,25 +13,26 @@ import java.util.List;
 
 class Person {
 	private String name;
-	private String age;
-
+	private int age;
+	
+	
 	public Person(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;
-	}	
+	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public int getage() {
+	public int getAge() {
 		return age;
-	}
+	}	
 	
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", age=" + age + "]"		
+		return "Person [name=" + name + ", age=" + age + "]";
 	}
 	
 }
@@ -53,17 +55,16 @@ public class MapStreamTest {
 		System.out.println(persons);
 		
 		// MapXXX : 컬렉션(리스트) 원소를 다른 원소로 변환
-		persons
-			.stream()
-			.map(person -> {
+		persons.stream().map(person -> {
+			
 					return person.getName();
 			
 		}).forEach( name -> {
 			
-			System.out.ptintln(name);
+			System.out.println(name);
 		});
 		
-		int total = persons.stream().mapToInt(Person::getAge).sim();
+		int total = persons.stream().mapToInt(Person::getAge).sum();
 		System.out.println("total : " + total);		
 		
 		
@@ -71,13 +72,13 @@ public class MapStreamTest {
 		List<String> fruits = List.of("Apple,Banana", "Cherry,Grape", "Orange,Mango");
 		
 		
-		List<String> allFruits = fruits
-			.stream()
-			.flatMap(line -> {
+		List<String> result = fruits
+								.stream()
+								.flatMap(line -> {
 			
-					String[] values = line.split(",");			
-					return Arrays.stream(values);						
-				}).collect(Collectors.toList());
+									String[] values = line.split(",");			
+									return Arrays.stream(values);						
+								}).collect(Collectors.toList());
 		
 		System.out.println(result);
 		

@@ -14,14 +14,22 @@ import java.util.stream.Stream;
 //////////////////////////
 class Person {
 	private String name;
-	private String age;
+	private int age;
 	
 	
-	public Person() {
+	public Person(String name, int age) {
 		super();
+		this.name = name;
+		this.age = age;
 	}	
+	
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	
 }
-////////////////////////
+
 public class CoolectionStreamTest {
 
 	public static void main(String[] args) {
@@ -53,17 +61,15 @@ public class CoolectionStreamTest {
 		
 		List<Person> people = new ArrayList<>();
 		people.add(new Person("김유신", 23));
-		people.add(new Person("김춘추", 23));
-		people.add(new Person("장보고", 23));
-		people.add(new Person("강감찬", 23));
-		people.add(new Person("이순신", 23));
+		people.add(new Person("김춘추", 21));
+		people.add(new Person("장보고", 33));
+		people.add(new Person("강감찬", 43));
+		people.add(new Person("이순신", 53));
 		
-		people.stream().forEach((p) -> {
-			System.out.println(p);			
-		});
 		
-		people.stream().forEach(System.out::println);
-		
+		people.stream().forEach(p -> System.out.println(p)); // 1
+		people.stream().forEach(System.out::println); // 1 이랑 똑같은 출력
+				
 	}
 	
 }
